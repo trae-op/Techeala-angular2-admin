@@ -1,0 +1,33 @@
+
+<h2>{{titleContacts}}</h2>
+
+
+<p>{{skype}}</p>
+<p>{{email}}</p>
+<p>{{phone}}</p>
+<p>
+  <strong>Coordinates</strong><br>
+  <span>{{mapCoordinatesLat}}</span><br>
+  <span>{{mapCoordinatesLng}}</span>
+</p>
+
+
+  <form class="form" (ngSubmit)="onSubmit(); contactsForm.reset()" #contactsForm="ngForm">
+    <input type="text" placeholder="What need to do?" name="inputForm" [(ngModel)]="inputForm"  required />
+    <button type="submit" [disabled]="contactsForm.form.invalid">Add</button>    
+  </form>
+
+
+<ngui-map 
+  zoom="5" 
+  center="37.775, -122.434"
+  (mapReady$)="onMapReady($event)"
+  (mapClick)="onMapClick($event)"
+  (idle)="onIdle($event)"
+>
+  <marker 
+    *ngFor="let pos of positions" 
+    [position]="pos"
+    (initialized$)="onMarkerInit($event)"
+  ></marker>
+</ngui-map>

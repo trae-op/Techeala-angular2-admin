@@ -1,0 +1,11 @@
+
+
+<h2>{{titleNav}}</h2>
+
+<nav>
+  <ul>
+    <li *ngFor="let item of mainNav">
+      <a [routerLink]="['/' + item.link]">{{item.page}}</a>
+    </li>
+  </ul>
+</nav>
