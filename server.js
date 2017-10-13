@@ -12,34 +12,6 @@ const api = require('./server/routes/api');
 
 const app = express();
 
-// containing data of database
-var db = require('./server/db').DataBase;
-
-
-
-app.post('/addSlide', function(req, res, next) {
-  //var body = req.body;
-
-  db.modelData.find()
-    .then(doc => {
-
-      doc[0].allData[0].dataPage.slides.push({
-        name: "new slide",
-        image: "images/new-img.jpg"
-      });
-
-      doc[0]
-        .save().then(data => res.json(data))
-        .catch(err => next(err));
-      
-    })
-    .catch(err => next(err))
-
-});
-
-
-
-
 // Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

@@ -4,16 +4,14 @@
 const mongoose = require('mongoose');
 const colors = require('colors');
 
-var options = { promiseLibrary: require('bluebird') };
-var db = mongoose.createConnection('mongodb://localhost/techeala', options);
+mongoose.Promise = global.Promise;
+
+var db = mongoose.connection;
 
 //var db = mongoose.connection;              
 db.on('error', console.error);
 
 db.once('open', () => console.log(colors.green('Connected to DB :◅-)')));
-
-// name db: resume
-//mongoose.connect('mongodb://app-resume:darkmanx1988@ds015942.mlab.com:15942/resume');
 
 mongoose.connect('mongodb://localhost/techeala', {
   useMongoClient: true
@@ -67,10 +65,7 @@ var mainSchema = mongoose.Schema({
 var Techeala = mongoose.model('Techeala', mainSchema);
 
 
-Techeala.find({ hasData: true }, function(err, page) {
-  if (err) {
-    console.log(colors.red('===>>> fail search!!! <<<===') + '\n', err);
-  } else {
+Techeala.find({ hasData: true }).then( page => {
     if (!page[0]) {
       var defaultData = new Techeala({
         hasData: true,
@@ -172,21 +167,15 @@ Techeala.find({ hasData: true }, function(err, page) {
       });
 
 
-      defaultData.save(function (err) {
-        if (err) {
-          console.log(colors.red('Fail request for default data!!!') + '\n', err);
-        } else {
-          console.log(colors.green('===> Successful request for default data!!! <==='));
-        }
-      });
-
-
+      defaultData.save()
+      .then( () => console.log(colors.green('===> Successful request for default data!!! <===')))
+      .catch(err => console.log(colors.red('Fail request for default data!!!') + '\n', err));
 
     }
-  }
-});
+
+}).catch(err => console.log(colors.red('===>>> fail search!!! <<<===') + '\n', err));
 
 
 exports.DataBase = { 
-  modelData: mongoose.model('Techeala', mainSchema)
+  modelData: Techeala
 };
