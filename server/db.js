@@ -3,17 +3,17 @@
 // module to helping for work mongoDB
 const mongoose = require('mongoose');
 const colors = require('colors');
+const messages = require('./shared/messages');
 
 mongoose.Promise = global.Promise;
 
-var db = mongoose.connection;
-
-//var db = mongoose.connection;              
+let db = mongoose.connection;
+             
 db.on('error', console.error);
 
-db.once('open', () => console.log(colors.green('Connected to DB :◅-)')));
+db.once('open', () => console.log(colors.green(messages.db.connected)));
 
-mongoose.connect('mongodb://localhost/techeala', {
+mongoose.connect(messages.db.url, {
   useMongoClient: true
 });
 
@@ -56,14 +56,13 @@ var allSchema = mongoose.Schema({
   }
 });
 
-var mainSchema = mongoose.Schema({
+let mainSchema = mongoose.Schema({
   hasData: Boolean,
   allData: [allSchema]
 });
 
 // DataBase
-var Techeala = mongoose.model('Techeala', mainSchema);
-
+let Techeala = mongoose.model('Techeala', mainSchema);
 
 Techeala.find({ hasData: true }).then( page => {
     if (!page[0]) {
@@ -168,14 +167,15 @@ Techeala.find({ hasData: true }).then( page => {
 
 
       defaultData.save()
-      .then( () => console.log(colors.green('===> Successful request for default data!!! <===')))
-      .catch(err => console.log(colors.red('Fail request for default data!!!') + '\n', err));
+      .then( () => console.log(colors.green(messages.db.successfulDefaultData)))
+      .catch(err => console.log(colors.red(messages.db.failDefaultData) + '\n', err));
 
     }
 
-}).catch(err => console.log(colors.red('===>>> fail search!!! <<<===') + '\n', err));
+}).catch(err => console.log(colors.red(messages.db.failSearch) + '\n', err));
 
 
 exports.DataBase = { 
   modelData: Techeala
 };
+
