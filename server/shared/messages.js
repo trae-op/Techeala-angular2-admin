@@ -7,8 +7,9 @@ module.exports = {
     failDefaultData: '===> Fail request for default data!!! <===',
     failSearch: '===>>> fail search!!! <<<==='
   },
-  editSlide: {
-    missingBody: 'Missing "body" for edit slide!!!',
-    missingId: 'Missing "id" for edit slide!!!'
+  shared: {
+    emptyFields: 'Empty fields!!!',
+    missingBody: 'Missing "body"!!!',
+    missingId: 'Missing "id"!!!'
   }
 };
