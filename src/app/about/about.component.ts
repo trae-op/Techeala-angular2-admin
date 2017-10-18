@@ -19,7 +19,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class AboutComponent implements OnInit {
   
   titleAbout: string = 'About';
-  description: string;
+  description: string[];
   gallery: TeamGallery[];
   private base64textString: String = "";
 
@@ -30,15 +30,8 @@ export class AboutComponent implements OnInit {
   // this method from the angular box
   // it start run at initialization of component
   ngOnInit() {
-    // this.aboutService.getGallery(data => {
-    //   //console.log('data-->',data)
-    //   this.teamGallery = data;
-    // });
-    this.aboutService.getHome().subscribe(data => {
-      console.log('data--->', data);
-      this.gallery = data.gallery;
-    });
-    //this.router.navigateByUrl('/about');
+    this.aboutService.getTeamGallery().subscribe(data => this.gallery = data);
+    this.aboutService.getDescription().subscribe(data => this.description = data);
   }
 
 

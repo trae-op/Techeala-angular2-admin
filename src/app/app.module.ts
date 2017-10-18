@@ -23,6 +23,8 @@ import { ROUTES } from './app.routing';
 
 import { MainService } from './shared/main.service';
 
+import { MainData } from './shared/mainData';
+
 
 @NgModule({
   imports: [
@@ -45,7 +47,7 @@ import { MainService } from './shared/main.service';
     NavComponent,
     PageNotFoundComponent
   ],
-  providers: [MainService],
+  providers: [MainService, MainData],
   bootstrap: [AppComponent]
 })
 

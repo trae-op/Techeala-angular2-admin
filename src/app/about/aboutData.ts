@@ -1,6 +1,9 @@
 
 
 export interface AboutData {
-  name: string;
-  image: string;
+  description: string;
+  gallery: [{
+    name: string,
+    image: string
+  }];
 }

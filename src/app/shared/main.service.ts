@@ -11,38 +11,46 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/publishReplay';
 import 'rxjs/add/observable/of';
 
-
-//import { MainData } from './mainData';
+import { MainData } from '../shared/mainData';
 
 // for adding other services 
 @Injectable()
 
 export class MainService {
 
-  constructor(private http: Http) {}
-
-  private baseUrl = 'api/get/mainMenu';
+  constructor(private http: Http, private mainData: MainData) {}
   
-  public allData: Observable<any[]>;
+  public menuData: Observable<any[]>;
 
   getMainMenu() {
-    if (!this.allData) {
-      this.allData = this.http.get(this.baseUrl)
-        .map((response: Response) => response.json())
-        .do(data => console.info('===> successful <===\n', data))
+    return this.anyRequest({
+        request: this.http.get(this.mainData.api().mainMenu.get).map((response: Response) => response.json()),
+        cacheProp: 'menuData'
+      });
+  }
+
+  anyRequest(settings) {
+    if (!this[settings.cacheProp]) {
+      this[settings.cacheProp] = settings.request.do(data => console.info('===> successful <===\n', data))
         // Caching of data
         .publishReplay(1).refCount()
         .catch(this.handleError);
     } else {
-      console.info('if exist data');
+      console.info(this.mainData.cacheMessage(settings.cacheProp));
     }
-      return this.allData;
+
+    return this[settings.cacheProp];
+  }  
+
+  clearCache() {
+    this.menuData = null;
   }
 
   private handleError(error: Response): Observable<any> {
     // in a real world app, we may send the server to some remote logging infrastructure
     // instead of just logging it to the console
-    console.warn('===> Bad request <===', error);
-    return Observable.throw(error.json().error || 'Server error');
+    console.warn(this.mainData.badRequest, error);
+    return Observable.throw(error.json().error || this.mainData.serverError);
   }
 }
+

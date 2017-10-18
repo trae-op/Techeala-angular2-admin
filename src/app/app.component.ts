@@ -20,6 +20,7 @@ export class AppComponent {
   // // this method from the angular box
   // // it start run at initialization of component
   ngOnInit() {
+    this.mainService.clearCache();
     this.mainService.getMainMenu().subscribe(data => this.mainMenu = data);
   }
 

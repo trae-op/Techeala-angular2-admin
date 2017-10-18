@@ -1,4 +1,5 @@
 
 export interface TeamGallery {
-  gallery: Object;
+  name: string;
+  image: string;
 }

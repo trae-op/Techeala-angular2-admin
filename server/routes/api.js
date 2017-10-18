@@ -29,7 +29,7 @@ home
 
 about
   .init( _this =>_this.app = app)
-  .editDescription('/edit/description')
+  .editDescription('/edit/aboutDescription')
   .getAbout('/get/about')
   .addTeamPhoto('/add/teamPhoto')
   .editTeamPhoto('/edit/teamPhoto')

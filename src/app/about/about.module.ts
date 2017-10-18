@@ -4,7 +4,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-//import { MainService } from '../../shared/main.service';
+import { MainService } from '../shared/main.service';
 
 //import { AppComponent } from '../app.component';
 import { AboutComponent } from './about.component';
@@ -17,7 +17,7 @@ import { AboutService } from './about.service';
     declarations: [
       AboutComponent
     ],
-    providers: [AboutService]
+    providers: [MainService, AboutService]
 })
 
 export class AboutModule { }
