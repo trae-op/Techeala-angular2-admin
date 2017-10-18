@@ -3,7 +3,7 @@
 import { Component, OnInit } from '@angular/core';
 //import { Router } from '@angular/router';
 
-import { MainService } from '../shared/main.service';
+import { HomeService } from './home.service';
 
 import { SlidesData } from './slidesData';
 
@@ -17,12 +17,12 @@ export class HomeComponent {
 
   slidesData: SlidesData[];
 
-  constructor(private mainService: MainService) {}
+  constructor(private homeService: HomeService) {}
 
   // // this method from the angular box
   // // it start run at initialization of component
   ngOnInit() {
-    this.mainService.getData().subscribe(data => this.slidesData = data[0].dataPage.slides);
+    this.homeService.getSlides().subscribe(data => this.slidesData = data);
   }
 
 }

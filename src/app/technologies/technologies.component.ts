@@ -21,7 +21,7 @@ export class TechnologiesComponent implements OnInit {
   // this method from the angular box
   // it start run at initialization of component
   ngOnInit() {
-    this.mainService.getData().subscribe(data => this.technologies = data[3].dataPage.technologies);
+    //this.mainService.getData().subscribe(data => this.technologies = data[3].dataPage.technologies);
   }
 
 }

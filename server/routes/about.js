@@ -13,18 +13,39 @@ module.exports = {
     callBack(this);
     return this;
   },
-  getTeamGallery(url) {
+  editDescription(url) {
+    this.app.put(url, (req, res, next) => {
+
+      let body = req.body;
+
+      db.about.find()
+        .then(doc => {
+
+          doc[0].description = body.description || '';
+
+          doc[0]
+            .save().then(data => res.json({ successful: true, data: data.description }))
+            .catch(err => next(err));
+
+        })
+        .catch(err => next(err))
+    });
+
+    return this;
+  },
+  getAbout(url) {
     this.app.get(url, (req, res, next) => {
-      db.teamGallery.find()
+      db.about.find()
         .then(doc => {
 
           if (!doc.length) {
-            let collection = new db.teamGallery({
+            let collection = new db.about({
+              description: '',
               gallery: []
             });
-            collection.save().then(data => res.json([data][0].gallery)).catch(err => next(err));
+            collection.save().then(data => res.json([data][0])).catch(err => next(err));
           } else {
-            res.json(doc[0].gallery)
+            res.json(doc[0])
           }
 
         })
@@ -36,12 +57,15 @@ module.exports = {
 
   addTeamPhoto(url) {
     this.app.post(url, (req, res, next) => {
-      db.teamGallery.find()
+      let body = req.body;
+      db.about.find()
         .then(doc => {
 
+          console.log(body)
+
           doc[0].gallery.push({
-            name: "",
-            image: ""
+            name: body.name,
+            image: body.image
           });
 
           doc[0]
@@ -61,7 +85,7 @@ module.exports = {
 
       let body = req.body;
 
-      db.teamGallery.find()
+      db.about.find()
         .then(doc => {
 
           let gallery = doc[0].gallery;
@@ -90,7 +114,7 @@ module.exports = {
 
       let body = req.body;
 
-      db.teamGallery.find()
+      db.about.find()
         .then(doc => {
 
           if (!globalMethods.checkId(body.id, res)) return;

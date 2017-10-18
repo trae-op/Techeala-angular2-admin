@@ -24,7 +24,7 @@ export class VacanciesComponent implements OnInit {
   // // this method from the angular box
   // // it start run at initialization of component
   ngOnInit() {
-    this.mainService.getData().subscribe(data => this.vacancies = data[4].dataPage.vacancies);
+    //this.mainService.getData().subscribe(data => this.vacancies = data[4].dataPage.vacancies);
     //this.router.navigateByUrl('/vacancies');
   }
 

@@ -1,11 +1,27 @@
 
 
-<h2>{{titleNav}}</h2>
-
 <nav>
-  <ul>
-    <li *ngFor="let item of mainNav">
-      <a [routerLink]="['/' + item.link]">{{item.page}}</a>
+  <ul class="nav nav-pills nav-fill">
+    <li class="nav-item" *ngFor="let item of mainNav">
+      <a class="nav-link" [routerLinkActiveOptions]="{exact:
+  true}" routerLinkActive="active" [routerLink]="['/' + item.link]">{{item.page}}</a>
     </li>
   </ul>
 </nav>
+
+
+<!-- 
+<ul class="nav nav-pills nav-fill">
+  <li class="nav-item" *ngFor="let item of mainNav">
+    <a class="nav-link active" [routerLink]="['/' + item.link]">{{item.page}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Longer nav link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul> -->

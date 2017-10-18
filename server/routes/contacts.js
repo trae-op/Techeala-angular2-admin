@@ -21,11 +21,9 @@ module.exports = {
 
       db.contacts.find()
         .then(doc => {
-
-          console.log('-->',doc[0])
-
-          doc[0].mapCoordinates[0].lat = body.lat || 0;
-          doc[0].mapCoordinates[0].lng = body.lng || 0;
+          
+          doc[0].mapCoordinates[0].lat = body.mapCoordinates.lat || 0;
+          doc[0].mapCoordinates[0].lng = body.mapCoordinates.lng || 0;
 
           doc[0]
             .save().then(data => res.json({ successful: true, data: data.mapCoordinates }))
@@ -45,10 +43,10 @@ module.exports = {
           if (!doc.length) {
             let collection = new db.contacts({
               contacts: [],
-              mapCoordinates: {
+              mapCoordinates: [{
                 lat: 0,
                 lng: 0
-              }
+              }]
             });
             collection.save().then(data => res.json([data][0])).catch(err => next(err));
           } else {

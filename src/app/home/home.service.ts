@@ -1,5 +1,7 @@
 
 
+
+
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
@@ -17,18 +19,22 @@ import 'rxjs/add/observable/of';
 // for adding other services 
 @Injectable()
 
-export class MainService {
+export class HomeService {
 
   constructor(private http: Http) {}
 
-  private baseUrl = 'api/get/mainMenu';
+  private api = {
+    slides: {
+      get: 'api/get/home'
+    }
+  };
   
-  public allData: Observable<any[]>;
+  public dataSlides: Observable<any[]>;
 
-  getMainMenu() {
-    if (!this.allData) {
-      this.allData = this.http.get(this.baseUrl)
-        .map((response: Response) => response.json())
+  getSlides() {
+    if (!this.dataSlides) {
+      this.dataSlides = this.http.get(this.api.slides.get)
+        .map((response: Response) => response.json().slides)
         .do(data => console.info('===> successful <===\n', data))
         // Caching of data
         .publishReplay(1).refCount()
@@ -36,7 +42,7 @@ export class MainService {
     } else {
       console.info('if exist data');
     }
-      return this.allData;
+      return this.dataSlides;
   }
 
   private handleError(error: Response): Observable<any> {

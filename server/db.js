@@ -25,21 +25,22 @@ let mainMenuSchema = mongoose.Schema({
   }]
 });
 
-let slidesHomeSchema = mongoose.Schema({
+let homeSchema = mongoose.Schema({
   slides: [{
     name: String,
     image: String
   }]
 });
 
-let teamGallerySchema = mongoose.Schema({
+let aboutSchema = mongoose.Schema({
+  description: String,
   gallery: [{
     name: String,
     image: String
   }]
 });
 
-let projectsSchema = mongoose.Schema({
+let portfolioSchema = mongoose.Schema({
   projects: [{
     image: String,
     link: String,
@@ -70,10 +71,10 @@ let contactsSchema = mongoose.Schema({
       link: String
     }
   ],
-  mapCoordinates: {
+  mapCoordinates: [{
     lat: Number,
     lng: Number
-  }
+  }]
 });
 
 let faqSchema = mongoose.Schema({
@@ -86,9 +87,9 @@ let faqSchema = mongoose.Schema({
 
 exports.DataBase = {
   mainMenu: mongoose.model('MainMenu', mainMenuSchema),
-  slidesHome: mongoose.model('SlidesHome', slidesHomeSchema),
-  teamGallery: mongoose.model('TeamGallery', teamGallerySchema),
-  projects: mongoose.model('Projects', projectsSchema),
+  home: mongoose.model('Home', homeSchema),
+  about: mongoose.model('About', aboutSchema),
+  portfolio: mongoose.model('Portfolio', portfolioSchema),
   technologies: mongoose.model('Technologies', technologiesSchema),
   vacancies: mongoose.model('Vacancies', vacanciesSchema),
   contacts: mongoose.model('Contacts', contactsSchema),

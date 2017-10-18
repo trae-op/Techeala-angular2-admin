@@ -8,7 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 //import { AppComponent } from '../app.component';
 import { AboutComponent } from './about.component';
-import { MainService } from '../shared/main.service';
+import { AboutService } from './about.service';
 
 @NgModule({
     imports: [
@@ -17,7 +17,7 @@ import { MainService } from '../shared/main.service';
     declarations: [
       AboutComponent
     ],
-   // bootstrap: [ AppComponent ]
+    providers: [AboutService]
 })
 
 export class AboutModule { }

@@ -3,9 +3,9 @@ const express = require('express');
 const app = express();
 
 const mainMenu = require('./mainMenu');
-const slidesHome = require('./slidesHome');
-const teamGallery = require('./teamGallery');
-const projects = require('./projects');
+const home = require('./home');
+const about = require('./about');
+const portfolio = require('./portfolio');
 const technologies = require('./technologies');
 const vacancies = require('./vacancies');
 const faq = require('./faq');
@@ -20,23 +20,24 @@ mainMenu
   .init( _this =>_this.app = app)
   .getMainMenu('/get/mainMenu');
 
-slidesHome
+home
   .init( _this =>_this.app = app)
-  .getSlidesHome('/get/slidesHome')
-  .addSlide('/add/slide')
-  .editSlide('/edit/slide')
-  .deleteSlide('/delete/slide');
+  .getHome('/get/home')
+  .addSlide('/add/slideHome')
+  .editSlide('/edit/slideHome')
+  .deleteSlide('/delete/slideHome');
 
-teamGallery
+about
   .init( _this =>_this.app = app)
-  .getTeamGallery('/get/teamGallery')
+  .editDescription('/edit/description')
+  .getAbout('/get/about')
   .addTeamPhoto('/add/teamPhoto')
   .editTeamPhoto('/edit/teamPhoto')
   .deleteTeamPhoto('/delete/teamPhoto');
 
-projects
+portfolio
   .init( _this =>_this.app = app)
-  .getProjects('/get/projects')
+  .getPortfolio('/get/projects')
   .addProject('/add/project')
   .editProject('/edit/project')
   .deleteProject('/delete/project');

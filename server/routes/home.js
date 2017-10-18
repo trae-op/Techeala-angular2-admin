@@ -13,18 +13,18 @@ module.exports = {
     callBack(this);
     return this;
   },
-  getSlidesHome(url) {
+  getHome(url) {
     this.app.get(url, (req, res, next) => {
-      db.slidesHome.find()
+      db.home.find()
         .then(doc => {
 
           if (!doc.length) {
-            let collection = new db.slidesHome({
+            let collection = new db.home({
               slides: []
             });
-            collection.save().then(data => res.json([data][0].slides)).catch(err => next(err));
+            collection.save().then(data => res.json([data][0])).catch(err => next(err));
           } else {
-            res.json(doc[0].slides)
+            res.json(doc[0])
           }
 
         })
@@ -36,12 +36,13 @@ module.exports = {
 
   addSlide(url) {
     this.app.post(url, (req, res, next) => {
-      db.slidesHome.find()
+      let body = req.body;
+      db.home.find()
         .then(doc => {
 
           doc[0].slides.push({
-            name: "",
-            image: ""
+            name: body.name,
+            image: body.image
           });
 
           doc[0]
@@ -61,7 +62,7 @@ module.exports = {
 
       let body = req.body;
 
-      db.slidesHome.find()
+      db.home.find()
         .then(doc => {
 
           let slides = doc[0].slides;
@@ -90,7 +91,7 @@ module.exports = {
 
       let body = req.body;
 
-      db.slidesHome.find()
+      db.home.find()
         .then(doc => {
 
           if (!globalMethods.checkId(body.id, res)) return;

@@ -11,23 +11,24 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/publishReplay';
 import 'rxjs/add/observable/of';
 
-
-//import { MainData } from './mainData';
-
 // for adding other services 
 @Injectable()
 
-export class MainService {
+export class AboutService {
 
   constructor(private http: Http) {}
 
-  private baseUrl = 'api/get/mainMenu';
+  private api = {
+    about: {
+      get: 'api/get/about'
+    }
+  };
   
-  public allData: Observable<any[]>;
+  public dataHome: Observable<any[]>;
 
-  getMainMenu() {
-    if (!this.allData) {
-      this.allData = this.http.get(this.baseUrl)
+  getHome() {
+    if (!this.dataHome) {
+      this.dataHome = this.http.get(this.api.about.get)
         .map((response: Response) => response.json())
         .do(data => console.info('===> successful <===\n', data))
         // Caching of data
@@ -36,7 +37,7 @@ export class MainService {
     } else {
       console.info('if exist data');
     }
-      return this.allData;
+      return this.dataHome;
   }
 
   private handleError(error: Response): Observable<any> {

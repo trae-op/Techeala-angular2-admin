@@ -22,7 +22,7 @@ export class FaqComponent implements OnInit {
   // // this method from the angular box
   // // it start run at initialization of component
   ngOnInit() {
-    this.mainService.getData().subscribe(data => this.faqData = data[6].dataPage.faq);
+    //this.mainService.getData().subscribe(data => this.faqData = data[6].dataPage.faq);
   }
 
 }

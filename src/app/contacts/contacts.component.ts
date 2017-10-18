@@ -31,14 +31,14 @@ export class ContactsComponent implements OnInit {
   // // this method from the angular box
   // // it start run at initialization of component
   ngOnInit() {
-    this.mainService.getData().subscribe(data => {
-      this.skype = data[5].dataPage.skype;
-      this.phone = data[5].dataPage.phone;
-      this.email = data[5].dataPage.email;
-      this.mapCoordinates = data[5].dataPage.mapCoordinates;
-      this.mapCoordinatesLat = data[5].dataPage.mapCoordinates.lat;
-      this.mapCoordinatesLng = data[5].dataPage.mapCoordinates.lng;
-    });
+    // this.mainService.getData().subscribe(data => {
+    //   this.skype = data[5].dataPage.skype;
+    //   this.phone = data[5].dataPage.phone;
+    //   this.email = data[5].dataPage.email;
+    //   this.mapCoordinates = data[5].dataPage.mapCoordinates;
+    //   this.mapCoordinatesLat = data[5].dataPage.mapCoordinates.lat;
+    //   this.mapCoordinatesLng = data[5].dataPage.mapCoordinates.lng;
+    // });
   }
 
 

@@ -1,8 +1,19 @@
 
 <h2>{{titleHome}}</h2>
 
-<ol class="slides">
-  <li *ngFor="let slide of slidesData">
-    {{slide.name}}<br>{{slide.image}}
-  </li>
-</ol> 
+<h3>Slides</h3>
+
+<div class="row">
+
+  <div class="col-sm-4 p-2" *ngFor="let slide of slidesData">
+    <div class="card">
+      <img class="card-img-top" src="https://www.quackit.com/pix/samples/12s.jpg" alt="Card image cap">
+      <div class="card-block">
+        <p class="card-text">{{slide.name}}</p>
+        <button type="button" class="btn btn-outline-primary">edit</button>
+        <button type="button" class="btn btn-outline-danger">delete</button>
+      </div>
+    </div>
+  </div>
+
+</div>

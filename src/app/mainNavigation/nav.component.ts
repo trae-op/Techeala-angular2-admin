@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { MainData } from '../shared/mainData';
+import { MainMenu } from '../shared/mainMenu';
 
 @Component({
   selector: 'main-nav',
@@ -9,6 +9,6 @@ import { MainData } from '../shared/mainData';
 })
 
 export class NavComponent {
-  @Input() mainNav: MainData;
+  @Input() mainNav: MainMenu;
   titleNav: string = 'Nav';
 }

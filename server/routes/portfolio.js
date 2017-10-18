@@ -14,17 +14,17 @@ module.exports = {
     callBack(this);
     return this;
   },
-  getProjects(url) {
+  getPortfolio(url) {
     this.app.get(url, (req, res, next) => {
-      db.projects.find()
+      db.portfolio.find()
         .then(doc => {
           if (!doc.length) {
-            let collection = new db.projects({
+            let collection = new db.portfolio({
               projects: []
             });
-            collection.save().then(data => res.json([data][0].projects)).catch(err => next(err));
+            collection.save().then(data => res.json([data][0])).catch(err => next(err));
           } else {
-            res.json(doc[0].projects)
+            res.json(doc[0])
           }
 
         })
@@ -37,7 +37,7 @@ module.exports = {
   addProject(url) {
     this.app.post(url, (req, res, next) => {
       let body = req.body;
-      db.projects.find()
+      db.portfolio.find()
         .then(doc => {
 
           doc[0].projects.push({
@@ -63,7 +63,7 @@ module.exports = {
 
       let body = req.body;
 
-      db.projects.find()
+      db.portfolio.find()
         .then(doc => {
 
           if (!globalMethods.checkId(body.id, res)) return;
@@ -91,7 +91,7 @@ module.exports = {
 
       let body = req.body;
 
-      db.projects.find()
+      db.portfolio.find()
         .then(doc => {
 
           if (!globalMethods.checkId(body.id, res)) return;

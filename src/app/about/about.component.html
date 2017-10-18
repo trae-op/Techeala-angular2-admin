@@ -1,7 +1,22 @@
 
 <h2>{{titleAbout}}</h2>
 
-<p>{{description}}</p>
+<div class="row">
+
+  <div class="col-sm-4 p-2" *ngFor="let teamPhoto of gallery">
+    <div class="card">
+      <img class="card-img-top" src="https://www.quackit.com/pix/samples/12s.jpg" alt="Card image cap">
+      <div class="card-block">
+        <p class="card-text">{{teamPhoto.name}}</p>
+        <button type="button" class="btn btn-outline-primary">edit</button>
+        <button type="button" class="btn btn-outline-danger">delete</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- <p>{{description}}</p>
 
 
 <label for="filePicker">Choose or drag a file:</label><br>
@@ -36,4 +51,4 @@
   <li *ngFor="let img of teamGallery">
     {{img.name}}
   </li>
-</ol>
+</ol> -->

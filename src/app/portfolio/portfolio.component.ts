@@ -22,7 +22,7 @@ export class PortfolioComponent implements OnInit {
   // // this method from the angular box
   // // it start run at initialization of component
   ngOnInit() {
-    this.mainService.getData().subscribe(data => this.projects = data[2].dataPage.projects);
+    //this.mainService.getData().subscribe(data => this.projects = data[2].dataPage.projects);
   }
 
 }

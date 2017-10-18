@@ -4,7 +4,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { MainService } from '../shared/main.service';
+import { AboutService } from './about.service';
 
 import { TeamGallery } from './teamGallery';
 
@@ -12,26 +12,31 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
-  templateUrl: './about.component.html'
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.scss']
 })
 
 export class AboutComponent implements OnInit {
   
   titleAbout: string = 'About';
   description: string;
-  teamGallery: TeamGallery[];
+  gallery: TeamGallery[];
   private base64textString: String = "";
 
    closeResult: string;
 
-  constructor(private mainService: MainService, private router: Router, private modalService: NgbModal) {}
+  constructor(private aboutService: AboutService, private router: Router, private modalService: NgbModal) {}
 
   // this method from the angular box
   // it start run at initialization of component
   ngOnInit() {
-    this.mainService.getData().subscribe(data => {
-      this.teamGallery = data[1].dataPage.teamGallery;
-      this.description = data[1].dataPage.description;
+    // this.aboutService.getGallery(data => {
+    //   //console.log('data-->',data)
+    //   this.teamGallery = data;
+    // });
+    this.aboutService.getHome().subscribe(data => {
+      console.log('data--->', data);
+      this.gallery = data.gallery;
     });
     //this.router.navigateByUrl('/about');
   }
