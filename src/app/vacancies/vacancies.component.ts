@@ -4,7 +4,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { MainService } from '../shared/main.service';
+import { VacanciesService } from './vacancies.service';
 
 import { VacanciesData } from './vacanciesData';
 
@@ -17,15 +17,12 @@ export class VacanciesComponent implements OnInit {
 
   vacancies: VacanciesData[];
 
-  constructor(private mainService: MainService, private router: Router) {
-    this.vacancies = [];
-  }
+  constructor(private vacanciesService: VacanciesService, private router: Router) {}
 
-  // // this method from the angular box
-  // // it start run at initialization of component
+  // this method from the angular box
+  // it start run at initialization of component
   ngOnInit() {
-    //this.mainService.getData().subscribe(data => this.vacancies = data[4].dataPage.vacancies);
-    //this.router.navigateByUrl('/vacancies');
+    this.vacanciesService.getVacancies().subscribe(data => this.vacancies = data);
   }
 
 }

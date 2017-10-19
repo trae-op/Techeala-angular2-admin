@@ -9,14 +9,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 //import { AppComponent } from '../../app.component';
 import { TechnologiesComponent } from './technologies.component';
-import { MainService } from '../shared/main.service';
+import { TechnologiesService } from './technologies.service';
 
 @NgModule({
     imports: [BrowserModule],
     declarations: [
       TechnologiesComponent
     ],
-    //providers: [MainService]
+    providers: [TechnologiesService]
 })
 
 export class TechnologiesModule { }

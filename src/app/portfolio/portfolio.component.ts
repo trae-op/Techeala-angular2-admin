@@ -4,7 +4,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { MainService } from '../shared/main.service';
+import { PortfolioService } from './portfolio.service';
 
 import { PortfolioData } from './portfolioData';
 
@@ -17,12 +17,12 @@ export class PortfolioComponent implements OnInit {
 
   projects: PortfolioData[];
 
-  constructor(private mainService: MainService, private router: Router) {}
+  constructor(private portfolioService: PortfolioService, private router: Router) {}
 
   // // this method from the angular box
   // // it start run at initialization of component
   ngOnInit() {
-    //this.mainService.getData().subscribe(data => this.projects = data[2].dataPage.projects);
+    this.portfolioService.getPortfolio().subscribe(data => this.projects = data);
   }
 
 }

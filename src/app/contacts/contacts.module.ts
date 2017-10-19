@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 
 //import { AppComponent } from '../../app.component';
 import { ContactsComponent } from './contacts.component';
-import { MainService } from '../shared/main.service';
+import { ContactsService } from './contacts.service';
 //http://maps.googleapis.com/maps/api/js?callback=googleMapsLoaded&sensor=false
 @NgModule({
     imports: [
@@ -22,7 +22,7 @@ import { MainService } from '../shared/main.service';
     declarations: [
       ContactsComponent
     ],
-    //providers: [MainService]
+    providers: [ContactsService]
 })
 
 export class ContactsModule { }

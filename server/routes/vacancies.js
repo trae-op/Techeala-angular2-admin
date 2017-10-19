@@ -21,9 +21,9 @@ module.exports = {
             let collection = new db.vacancies({
               vacancies: []
             });
-            collection.save().then(data => res.json([data][0].vacancies)).catch(err => next(err));
+            collection.save().then(data => res.json([data][0])).catch(err => next(err));
           } else {
-            res.json(doc[0].vacancies)
+            res.json(doc[0])
           }
 
         })

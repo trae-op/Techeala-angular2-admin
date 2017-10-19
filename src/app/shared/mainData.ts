@@ -28,6 +28,23 @@ export class MainData {
         description: {
           edit: 'api/edit/aboutDescription'
         }
+      },
+      portfolio: {
+        projects: {
+          get: 'api/get/projects'
+        }
+      },
+      technologies: {
+        get: 'api/get/technologies'
+      },
+      vacancies: {
+        get: 'api/get/vacancies'
+      },
+      faq: {
+        get: 'api/get/faq'
+      },
+      contacts: {
+        get: 'api/get/contacts'
       }
     };
   };

@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 
-//import { MainService } from '../../shared/main.service';
+import { VacanciesService } from './vacancies.service';
 
 //import { AppComponent } from '../../app.component';
 import { VacanciesComponent } from './vacancies.component';
@@ -16,7 +16,7 @@ import { MainService } from '../shared/main.service';
     declarations: [
       VacanciesComponent
     ],
-    //providers: [MainService]
+    providers: [VacanciesService]
 })
 
 export class VacanciesModule { }

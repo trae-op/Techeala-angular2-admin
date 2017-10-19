@@ -21,9 +21,9 @@ module.exports = {
             let collection = new db.technologies({
               technologies: []
             });
-            collection.save().then(data => res.json([data][0].technologies)).catch(err => next(err));
+            collection.save().then(data => res.json([data][0])).catch(err => next(err));
           } else {
-            res.json(doc[0].technologies)
+            res.json(doc[0])
           }
 
         })

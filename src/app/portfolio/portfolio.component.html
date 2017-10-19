@@ -1,10 +1,19 @@
 
 <h2>{{titlePortfolio}}</h2>
 
-<!-- <ol>
-  <li *ngFor="let project of projects">
-    <p>{{project.description}}</p>
-    <p>{{project.image}}</p>
-    <p>{{project.link}}</p>
-  </li>
-</ol> -->
+
+<div class="row">
+
+  <div class="col-sm-4 p-2" *ngFor="let project of projects">
+    <div class="card">
+      <img class="card-img-top" src="https://www.quackit.com/pix/samples/12s.jpg" alt="Card image cap">
+      <div class="card-block">
+        <a [href]="project.link" target="_blank">{{project.link}}</a>
+        <p class="card-text">{{project.description}}</p>
+        <button type="button" class="btn btn-outline-primary">edit</button>
+        <button type="button" class="btn btn-outline-danger">delete</button>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,8 +1,17 @@
 
 <h2>{{titleTechnologies}}</h2>
 
-<!-- <ol>
-  <li *ngFor="let technology of technologies">
-    <p>{{technology}}</p>
-  </li>
-</ol> -->
+<div class="row">
+
+  <div class="col-sm-4 p-2" *ngFor="let technology of technologies">
+    <div class="card">
+      <img class="card-img-top" src="https://www.quackit.com/pix/samples/12s.jpg" alt="Card image cap">
+      <div class="card-block">
+        <p class="card-text">{{technology.name}}</p>
+        <button type="button" class="btn btn-outline-primary">edit</button>
+        <button type="button" class="btn btn-outline-danger">delete</button>
+      </div>
+    </div>
+  </div>
+
+</div>

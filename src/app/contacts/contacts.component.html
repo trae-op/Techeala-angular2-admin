@@ -2,6 +2,24 @@
 <h2>{{titleContacts}}</h2>
 
 
+<div class="list-group contacts">
+<!--   <li class="list-group-item" *ngFor="let contact of contacts">
+    <img class="icon" src="https://www.quackit.com/pix/samples/12s.jpg" alt="">
+    <a [href]="contact.link">{{contact.name}}</a>
+        <button type="button" class="btn btn-outline-primary">edit</button>
+        <button type="button" class="btn btn-outline-danger">delete</button>
+  </li> -->
+  <div *ngFor="let contact of contacts" class="list-group-item">
+    <img class="icon float-left" src="https://www.quackit.com/pix/samples/12s.jpg" alt="">
+    <div class="inline">
+      <h5 class="mb-1">{{contact.name}}</h5>
+      <button type="button" class="btn btn-outline-primary">edit</button>
+      <button type="button" class="btn btn-outline-danger">delete</button>
+    </div>
+
+  </div>
+</div>
+
 <!-- <p>{{skype}}</p>
 <p>{{email}}</p>
 <p>{{phone}}</p>

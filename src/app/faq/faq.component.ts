@@ -4,7 +4,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { MainService } from '../shared/main.service';
+import { FaqService } from './faq.service';
 
 import { FaqData } from './faqData';
 
@@ -17,12 +17,13 @@ export class FaqComponent implements OnInit {
 
   faqData: FaqData[];
 
-  constructor(private mainService: MainService, private router: Router) {}
+  constructor(private faqService: FaqService, private router: Router) {}
 
-  // // this method from the angular box
-  // // it start run at initialization of component
+  // this method from the angular box
+  // it start run at initialization of component
   ngOnInit() {
-    //this.mainService.getData().subscribe(data => this.faqData = data[6].dataPage.faq);
+    this.faqService.getFaq().subscribe(data => this.faqData = data);
   }
+
 
 }

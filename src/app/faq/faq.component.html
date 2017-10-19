@@ -1,10 +1,16 @@
 
 <h2>{{titleFaq}}</h2>
 
-<!-- <ol>
-  <li *ngFor="let item of faqData">
-    <p>{{item.question}}</p>
-    <p>{{item.answer}}</p>
-    
+
+<!-- <ngbd-accordion-config [faqData]="faqData"></ngbd-accordion-config> -->
+
+<ul>
+  <li *ngFor="let faq of faqData">
+    <p>
+      <strong>{{faq.question}}</strong><br>
+      <i class="ml-3">{{faq.answer}}</i>
+    </p>
+    <button type="button" class="btn btn-outline-primary">edit</button>
+    <button type="button" class="btn btn-outline-danger">delete</button>
   </li>
-</ol> -->
+</ul>

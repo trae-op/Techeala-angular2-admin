@@ -4,8 +4,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { MainService } from '../shared/main.service';
+import { TechnologiesData } from './technologiesData';
 
+import { TechnologiesService } from './technologies.service';
 
 @Component({
   templateUrl: './technologies.component.html'
@@ -14,14 +15,14 @@ import { MainService } from '../shared/main.service';
 export class TechnologiesComponent implements OnInit {
   titleTechnologies: string = 'technologies';
 
-  technologies: string[];
+  technologies: TechnologiesData[];
 
-  constructor(private mainService: MainService, private router: Router) {}
+  constructor(private technologiesService: TechnologiesService, private router: Router) {}
 
   // this method from the angular box
   // it start run at initialization of component
   ngOnInit() {
-    //this.mainService.getData().subscribe(data => this.technologies = data[3].dataPage.technologies);
+    this.technologiesService.getTechnologies().subscribe(data => this.technologies = data);
   }
 
 }

@@ -1,0 +1,7 @@
+
+
+<ngb-accordion #acc="ngbAccordion" >
+  <ngb-panel *ngFor="let faq of faqData" [title]="faq.question" class="card-header">
+    <ng-template ngbPanelContent>{{faq.answer}}</ng-template>
+  </ngb-panel>
+</ngb-accordion>

@@ -4,15 +4,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { MainService } from '../shared/main.service';
+import { ContactsService } from './contacts.service';
+
+import { ContactsData } from './contactsData';
 
 @Component({
   templateUrl: './contacts.component.html',
-  styles: [`
-    form button[disabled] {
-      opacity: 0.3;
-    }
-  `]
+  styleUrls: ['./contacts.scss']
 })
 
 export class ContactsComponent implements OnInit {
@@ -26,7 +24,9 @@ export class ContactsComponent implements OnInit {
   positions: Object[] = [];
   inputForm: string = '';
 
-  constructor(private mainService: MainService, private router: Router) {}
+  contacts: ContactsData[];
+
+  constructor(private contactsService: ContactsService, private router: Router) {}
 
   // // this method from the angular box
   // // it start run at initialization of component
@@ -39,6 +39,7 @@ export class ContactsComponent implements OnInit {
     //   this.mapCoordinatesLat = data[5].dataPage.mapCoordinates.lat;
     //   this.mapCoordinatesLng = data[5].dataPage.mapCoordinates.lng;
     // });
+    this.contactsService.getContacts().subscribe(data => this.contacts = data);
   }
 
 

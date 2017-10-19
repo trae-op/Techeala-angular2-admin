@@ -101,7 +101,7 @@ AboutComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/about/about.component.html"),
         styles: [__webpack_require__("../../../../../src/app/about/about.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__about_service__["a" /* AboutService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__about_service__["a" /* AboutService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ng_bootstrap_ng_bootstrap__["b" /* NgbModal */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ng_bootstrap_ng_bootstrap__["b" /* NgbModal */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__about_service__["a" /* AboutService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__about_service__["a" /* AboutService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ng_bootstrap_ng_bootstrap__["c" /* NgbModal */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ng_bootstrap_ng_bootstrap__["c" /* NgbModal */]) === "function" && _c || Object])
 ], AboutComponent);
 
 var _a, _b, _c;
@@ -347,7 +347,7 @@ AppModule = __decorate([
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_4__ng_bootstrap_ng_bootstrap__["c" /* NgbModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_4__ng_bootstrap_ng_bootstrap__["d" /* NgbModule */].forRoot(),
             __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_15__app_routing__["a" /* ROUTES */]),
             __WEBPACK_IMPORTED_MODULE_5__home_home_module__["a" /* HomeModule */],
             __WEBPACK_IMPORTED_MODULE_6__about_about_module__["a" /* AboutModule */],
@@ -410,7 +410,7 @@ var ROUTES = [
 /***/ "../../../../../src/app/contacts/contacts.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<h2>{{titleContacts}}</h2>\n\n\n<!-- <p>{{skype}}</p>\n<p>{{email}}</p>\n<p>{{phone}}</p>\n<p>\n  <strong>Coordinates</strong><br>\n  <span>{{mapCoordinatesLat}}</span><br>\n  <span>{{mapCoordinatesLng}}</span>\n</p>\n\n\n  <form class=\"form\" (ngSubmit)=\"onSubmit(); contactsForm.reset()\" #contactsForm=\"ngForm\">\n    <input type=\"text\" placeholder=\"What need to do?\" name=\"inputForm\" [(ngModel)]=\"inputForm\"  required />\n    <button type=\"submit\" [disabled]=\"contactsForm.form.invalid\">Add</button>    \n  </form>\n\n\n<ngui-map \n  zoom=\"5\" \n  center=\"37.775, -122.434\"\n  (mapReady$)=\"onMapReady($event)\"\n  (mapClick)=\"onMapClick($event)\"\n  (idle)=\"onIdle($event)\"\n>\n  <marker \n    *ngFor=\"let pos of positions\" \n    [position]=\"pos\"\n    (initialized$)=\"onMarkerInit($event)\"\n  ></marker>\n</ngui-map> -->"
+module.exports = "\n<h2>{{titleContacts}}</h2>\n\n\n<div class=\"list-group contacts\">\n<!--   <li class=\"list-group-item\" *ngFor=\"let contact of contacts\">\n    <img class=\"icon\" src=\"https://www.quackit.com/pix/samples/12s.jpg\" alt=\"\">\n    <a [href]=\"contact.link\">{{contact.name}}</a>\n        <button type=\"button\" class=\"btn btn-outline-primary\">edit</button>\n        <button type=\"button\" class=\"btn btn-outline-danger\">delete</button>\n  </li> -->\n  <div *ngFor=\"let contact of contacts\" class=\"list-group-item\">\n    <img class=\"icon float-left\" src=\"https://www.quackit.com/pix/samples/12s.jpg\" alt=\"\">\n    <div class=\"inline\">\n      <h5 class=\"mb-1\">{{contact.name}}</h5>\n      <button type=\"button\" class=\"btn btn-outline-primary\">edit</button>\n      <button type=\"button\" class=\"btn btn-outline-danger\">delete</button>\n    </div>\n\n  </div>\n</div>\n\n<!-- <p>{{skype}}</p>\n<p>{{email}}</p>\n<p>{{phone}}</p>\n<p>\n  <strong>Coordinates</strong><br>\n  <span>{{mapCoordinatesLat}}</span><br>\n  <span>{{mapCoordinatesLng}}</span>\n</p>\n\n\n  <form class=\"form\" (ngSubmit)=\"onSubmit(); contactsForm.reset()\" #contactsForm=\"ngForm\">\n    <input type=\"text\" placeholder=\"What need to do?\" name=\"inputForm\" [(ngModel)]=\"inputForm\"  required />\n    <button type=\"submit\" [disabled]=\"contactsForm.form.invalid\">Add</button>    \n  </form>\n\n\n<ngui-map \n  zoom=\"5\" \n  center=\"37.775, -122.434\"\n  (mapReady$)=\"onMapReady($event)\"\n  (mapClick)=\"onMapClick($event)\"\n  (idle)=\"onIdle($event)\"\n>\n  <marker \n    *ngFor=\"let pos of positions\" \n    [position]=\"pos\"\n    (initialized$)=\"onMarkerInit($event)\"\n  ></marker>\n</ngui-map> -->"
 
 /***/ }),
 
@@ -421,7 +421,7 @@ module.exports = "\n<h2>{{titleContacts}}</h2>\n\n\n<!-- <p>{{skype}}</p>\n<p>{{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_main_service__ = __webpack_require__("../../../../../src/app/shared/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contacts_service__ = __webpack_require__("../../../../../src/app/contacts/contacts.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -435,8 +435,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ContactsComponent = (function () {
-    function ContactsComponent(mainService, router) {
-        this.mainService = mainService;
+    function ContactsComponent(contactsService, router) {
+        this.contactsService = contactsService;
         this.router = router;
         this.titleContacts = 'Contacts';
         this.positions = [];
@@ -445,6 +445,7 @@ var ContactsComponent = (function () {
     // // this method from the angular box
     // // it start run at initialization of component
     ContactsComponent.prototype.ngOnInit = function () {
+        var _this = this;
         // this.mainService.getData().subscribe(data => {
         //   this.skype = data[5].dataPage.skype;
         //   this.phone = data[5].dataPage.phone;
@@ -453,6 +454,7 @@ var ContactsComponent = (function () {
         //   this.mapCoordinatesLat = data[5].dataPage.mapCoordinates.lat;
         //   this.mapCoordinatesLng = data[5].dataPage.mapCoordinates.lng;
         // });
+        this.contactsService.getContacts().subscribe(function (data) { return _this.contacts = data; });
     };
     ContactsComponent.prototype.onSubmit = function () {
         console.log('input form\n', this.inputForm);
@@ -477,9 +479,9 @@ var ContactsComponent = (function () {
 ContactsComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         template: __webpack_require__("../../../../../src/app/contacts/contacts.component.html"),
-        styles: ["\n    form button[disabled] {\n      opacity: 0.3;\n    }\n  "]
+        styles: [__webpack_require__("../../../../../src/app/contacts/contacts.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__shared_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_main_service__["a" /* MainService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__contacts_service__["a" /* ContactsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__contacts_service__["a" /* ContactsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], ContactsComponent);
 
 var _a, _b;
@@ -497,6 +499,7 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngui_map__ = __webpack_require__("../../../../@ngui/map/dist/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__contacts_component__ = __webpack_require__("../../../../../src/app/contacts/contacts.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__contacts_service__ = __webpack_require__("../../../../../src/app/contacts/contacts.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -509,6 +512,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 //import { MainService } from '../../shared/main.service';
 //import { AppComponent } from '../../app.component';
+
 
 //http://maps.googleapis.com/maps/api/js?callback=googleMapsLoaded&sensor=false
 var ContactsModule = (function () {
@@ -526,6 +530,7 @@ ContactsModule = __decorate([
         declarations: [
             __WEBPACK_IMPORTED_MODULE_4__contacts_component__["a" /* ContactsComponent */]
         ],
+        providers: [__WEBPACK_IMPORTED_MODULE_5__contacts_service__["a" /* ContactsService */]]
     })
 ], ContactsModule);
 
@@ -533,10 +538,135 @@ ContactsModule = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/contacts/contacts.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "form button[disabled] {\n  opacity: 0.3; }\n\n.contacts img {\n  max-width: 100px;\n  margin-right: 10px; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/contacts/contacts.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactsService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_main_service__ = __webpack_require__("../../../../../src/app/shared/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_mainData__ = __webpack_require__("../../../../../src/app/shared/mainData.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+// for adding other services 
+var ContactsService = (function () {
+    function ContactsService(http, mainService, mainData) {
+        this.http = http;
+        this.mainService = mainService;
+        this.mainData = mainData;
+    }
+    ContactsService.prototype.getContacts = function () {
+        return this.mainService.anyRequest({
+            request: this.http.get(this.mainData.api().contacts.get).map(function (response) { return response.json().contacts; }),
+            cacheProp: 'contacts'
+        });
+    };
+    ContactsService.prototype.clearCache = function () {
+        this.contacts = null;
+    };
+    return ContactsService;
+}());
+ContactsService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__shared_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_main_service__["a" /* MainService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__shared_mainData__["a" /* MainData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_mainData__["a" /* MainData */]) === "function" && _c || Object])
+], ContactsService);
+
+var _a, _b, _c;
+//# sourceMappingURL=contacts.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/faq/accordion-config.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n\n<ngb-accordion #acc=\"ngbAccordion\" >\n  <ngb-panel *ngFor=\"let faq of faqData\" [title]=\"faq.question\" class=\"card-header\">\n    <ng-template ngbPanelContent>{{faq.answer}}</ng-template>\n  </ngb-panel>\n</ngb-accordion>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/faq/accordion-config.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbdAccordionConfig; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__faqData__ = __webpack_require__("../../../../../src/app/faq/faqData.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__faqData___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__faqData__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var NgbdAccordionConfig = (function () {
+    function NgbdAccordionConfig(config) {
+        // customize default values of accordions used by this component tree
+        config.closeOthers = true;
+        config.type = 'info';
+    }
+    return NgbdAccordionConfig;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__faqData__["FaqData"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__faqData__["FaqData"]) === "function" && _a || Object)
+], NgbdAccordionConfig.prototype, "faqData", void 0);
+NgbdAccordionConfig = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'ngbd-accordion-config',
+        template: __webpack_require__("../../../../../src/app/faq/accordion-config.component.html"),
+        providers: [__WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__["b" /* NgbAccordionConfig */]] // add the NgbAccordionConfig to the component providers
+    }),
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__["b" /* NgbAccordionConfig */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__["b" /* NgbAccordionConfig */]) === "function" && _b || Object])
+], NgbdAccordionConfig);
+
+var _a, _b;
+//# sourceMappingURL=accordion-config.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/faq/faq.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<h2>{{titleFaq}}</h2>\n\n<!-- <ol>\n  <li *ngFor=\"let item of faqData\">\n    <p>{{item.question}}</p>\n    <p>{{item.answer}}</p>\n    \n  </li>\n</ol> -->"
+module.exports = "\n<h2>{{titleFaq}}</h2>\n\n\n<!-- <ngbd-accordion-config [faqData]=\"faqData\"></ngbd-accordion-config> -->\n\n<ul>\n  <li *ngFor=\"let faq of faqData\">\n    <p>\n      <strong>{{faq.question}}</strong><br>\n      <i class=\"ml-3\">{{faq.answer}}</i>\n    </p>\n    <button type=\"button\" class=\"btn btn-outline-primary\">edit</button>\n    <button type=\"button\" class=\"btn btn-outline-danger\">delete</button>\n  </li>\n</ul>"
 
 /***/ }),
 
@@ -547,7 +677,7 @@ module.exports = "\n<h2>{{titleFaq}}</h2>\n\n<!-- <ol>\n  <li *ngFor=\"let item 
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FaqComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_main_service__ = __webpack_require__("../../../../../src/app/shared/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__faq_service__ = __webpack_require__("../../../../../src/app/faq/faq.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -561,15 +691,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var FaqComponent = (function () {
-    function FaqComponent(mainService, router) {
-        this.mainService = mainService;
+    function FaqComponent(faqService, router) {
+        this.faqService = faqService;
         this.router = router;
         this.titleFaq = 'Faq';
     }
-    // // this method from the angular box
-    // // it start run at initialization of component
+    // this method from the angular box
+    // it start run at initialization of component
     FaqComponent.prototype.ngOnInit = function () {
-        //this.mainService.getData().subscribe(data => this.faqData = data[6].dataPage.faq);
+        var _this = this;
+        this.faqService.getFaq().subscribe(function (data) { return _this.faqData = data; });
     };
     return FaqComponent;
 }());
@@ -577,7 +708,7 @@ FaqComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         template: __webpack_require__("../../../../../src/app/faq/faq.component.html")
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__shared_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_main_service__["a" /* MainService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__faq_service__["a" /* FaqService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__faq_service__["a" /* FaqService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], FaqComponent);
 
 var _a, _b;
@@ -592,7 +723,10 @@ var _a, _b;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FaqModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__faq_component__ = __webpack_require__("../../../../../src/app/faq/faq.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__faq_service__ = __webpack_require__("../../../../../src/app/faq/faq.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__accordion_config_component__ = __webpack_require__("../../../../../src/app/faq/accordion-config.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__faq_component__ = __webpack_require__("../../../../../src/app/faq/faq.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -601,8 +735,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 
 
-//import { MainService } from '../../shared/main.service';
+
+
 //import { AppComponent } from '../../app.component';
+
 
 var FaqModule = (function () {
     function FaqModule() {
@@ -611,14 +747,79 @@ var FaqModule = (function () {
 }());
 FaqModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
-        imports: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */]],
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__faq_component__["a" /* FaqComponent */]
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["d" /* NgbModule */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
         ],
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_5__faq_component__["a" /* FaqComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__accordion_config_component__["a" /* NgbdAccordionConfig */]
+        ],
+        providers: [__WEBPACK_IMPORTED_MODULE_3__faq_service__["a" /* FaqService */]]
     })
 ], FaqModule);
 
 //# sourceMappingURL=faq.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/faq/faq.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FaqService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_main_service__ = __webpack_require__("../../../../../src/app/shared/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_mainData__ = __webpack_require__("../../../../../src/app/shared/mainData.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+// for adding other services 
+var FaqService = (function () {
+    function FaqService(http, mainService, mainData) {
+        this.http = http;
+        this.mainService = mainService;
+        this.mainData = mainData;
+    }
+    FaqService.prototype.getFaq = function () {
+        return this.mainService.anyRequest({
+            request: this.http.get(this.mainData.api().faq.get).map(function (response) { return response.json().faq; }),
+            cacheProp: 'faq'
+        });
+    };
+    FaqService.prototype.clearCache = function () {
+        this.faq = null;
+    };
+    return FaqService;
+}());
+FaqService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__shared_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_main_service__["a" /* MainService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__shared_mainData__["a" /* MainData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_mainData__["a" /* MainData */]) === "function" && _c || Object])
+], FaqService);
+
+var _a, _b, _c;
+//# sourceMappingURL=faq.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/faq/faqData.ts":
+/***/ (function(module, exports) {
+
+//# sourceMappingURL=faqData.js.map
 
 /***/ }),
 
@@ -859,7 +1060,7 @@ PageNotFoundComponent = __decorate([
 /***/ "../../../../../src/app/portfolio/portfolio.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<h2>{{titlePortfolio}}</h2>\n\n<!-- <ol>\n  <li *ngFor=\"let project of projects\">\n    <p>{{project.description}}</p>\n    <p>{{project.image}}</p>\n    <p>{{project.link}}</p>\n  </li>\n</ol> -->"
+module.exports = "\n<h2>{{titlePortfolio}}</h2>\n\n\n<div class=\"row\">\n\n  <div class=\"col-sm-4 p-2\" *ngFor=\"let project of projects\">\n    <div class=\"card\">\n      <img class=\"card-img-top\" src=\"https://www.quackit.com/pix/samples/12s.jpg\" alt=\"Card image cap\">\n      <div class=\"card-block\">\n        <a [href]=\"project.link\" target=\"_blank\">{{project.link}}</a>\n        <p class=\"card-text\">{{project.description}}</p>\n        <button type=\"button\" class=\"btn btn-outline-primary\">edit</button>\n        <button type=\"button\" class=\"btn btn-outline-danger\">delete</button>\n      </div>\n    </div>\n  </div>\n\n</div>"
 
 /***/ }),
 
@@ -870,7 +1071,7 @@ module.exports = "\n<h2>{{titlePortfolio}}</h2>\n\n<!-- <ol>\n  <li *ngFor=\"let
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PortfolioComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_main_service__ = __webpack_require__("../../../../../src/app/shared/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__portfolio_service__ = __webpack_require__("../../../../../src/app/portfolio/portfolio.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -884,15 +1085,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var PortfolioComponent = (function () {
-    function PortfolioComponent(mainService, router) {
-        this.mainService = mainService;
+    function PortfolioComponent(portfolioService, router) {
+        this.portfolioService = portfolioService;
         this.router = router;
         this.titlePortfolio = 'Portfolio';
     }
     // // this method from the angular box
     // // it start run at initialization of component
     PortfolioComponent.prototype.ngOnInit = function () {
-        //this.mainService.getData().subscribe(data => this.projects = data[2].dataPage.projects);
+        var _this = this;
+        this.portfolioService.getPortfolio().subscribe(function (data) { return _this.projects = data; });
     };
     return PortfolioComponent;
 }());
@@ -900,7 +1102,7 @@ PortfolioComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         template: __webpack_require__("../../../../../src/app/portfolio/portfolio.component.html")
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__shared_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_main_service__["a" /* MainService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__portfolio_service__["a" /* PortfolioService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__portfolio_service__["a" /* PortfolioService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], PortfolioComponent);
 
 var _a, _b;
@@ -915,7 +1117,8 @@ var _a, _b;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PortfolioModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__portfolio_component__ = __webpack_require__("../../../../../src/app/portfolio/portfolio.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__portfolio_service__ = __webpack_require__("../../../../../src/app/portfolio/portfolio.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__portfolio_component__ = __webpack_require__("../../../../../src/app/portfolio/portfolio.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -924,9 +1127,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 
 
-//import { MainService } from '../../shared/main.service';
+
 //import { AppComponent } from '../../app.component';
 
+//import { MainService } from '../shared/main.service';
 var PortfolioModule = (function () {
     function PortfolioModule() {
     }
@@ -936,12 +1140,66 @@ PortfolioModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
         imports: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */]],
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__portfolio_component__["a" /* PortfolioComponent */]
+            __WEBPACK_IMPORTED_MODULE_3__portfolio_component__["a" /* PortfolioComponent */]
         ],
+        providers: [__WEBPACK_IMPORTED_MODULE_2__portfolio_service__["a" /* PortfolioService */]]
     })
 ], PortfolioModule);
 
 //# sourceMappingURL=portfolio.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/portfolio/portfolio.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PortfolioService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_main_service__ = __webpack_require__("../../../../../src/app/shared/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_mainData__ = __webpack_require__("../../../../../src/app/shared/mainData.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+// for adding other services 
+var PortfolioService = (function () {
+    function PortfolioService(http, mainService, mainData) {
+        this.http = http;
+        this.mainService = mainService;
+        this.mainData = mainData;
+    }
+    PortfolioService.prototype.getPortfolio = function () {
+        return this.mainService.anyRequest({
+            request: this.http.get(this.mainData.api().portfolio.projects.get).map(function (response) { return response.json().projects; }),
+            cacheProp: 'portfolio'
+        });
+    };
+    PortfolioService.prototype.clearCache = function () {
+        this.portfolio = null;
+    };
+    return PortfolioService;
+}());
+PortfolioService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__shared_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_main_service__["a" /* MainService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__shared_mainData__["a" /* MainData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_mainData__["a" /* MainData */]) === "function" && _c || Object])
+], PortfolioService);
+
+var _a, _b, _c;
+//# sourceMappingURL=portfolio.service.js.map
 
 /***/ }),
 
@@ -1059,6 +1317,23 @@ var MainData = (function () {
                 description: {
                     edit: 'api/edit/aboutDescription'
                 }
+            },
+            portfolio: {
+                projects: {
+                    get: 'api/get/projects'
+                }
+            },
+            technologies: {
+                get: 'api/get/technologies'
+            },
+            vacancies: {
+                get: 'api/get/vacancies'
+            },
+            faq: {
+                get: 'api/get/faq'
+            },
+            contacts: {
+                get: 'api/get/contacts'
             }
         };
     };
@@ -1081,7 +1356,7 @@ var MainData = (function () {
 /***/ "../../../../../src/app/technologies/technologies.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<h2>{{titleTechnologies}}</h2>\n\n<!-- <ol>\n  <li *ngFor=\"let technology of technologies\">\n    <p>{{technology}}</p>\n  </li>\n</ol> -->"
+module.exports = "\n<h2>{{titleTechnologies}}</h2>\n\n<div class=\"row\">\n\n  <div class=\"col-sm-4 p-2\" *ngFor=\"let technology of technologies\">\n    <div class=\"card\">\n      <img class=\"card-img-top\" src=\"https://www.quackit.com/pix/samples/12s.jpg\" alt=\"Card image cap\">\n      <div class=\"card-block\">\n        <p class=\"card-text\">{{technology.name}}</p>\n        <button type=\"button\" class=\"btn btn-outline-primary\">edit</button>\n        <button type=\"button\" class=\"btn btn-outline-danger\">delete</button>\n      </div>\n    </div>\n  </div>\n\n</div>"
 
 /***/ }),
 
@@ -1092,7 +1367,7 @@ module.exports = "\n<h2>{{titleTechnologies}}</h2>\n\n<!-- <ol>\n  <li *ngFor=\"
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TechnologiesComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_main_service__ = __webpack_require__("../../../../../src/app/shared/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__technologies_service__ = __webpack_require__("../../../../../src/app/technologies/technologies.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1106,15 +1381,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var TechnologiesComponent = (function () {
-    function TechnologiesComponent(mainService, router) {
-        this.mainService = mainService;
+    function TechnologiesComponent(technologiesService, router) {
+        this.technologiesService = technologiesService;
         this.router = router;
         this.titleTechnologies = 'technologies';
     }
     // this method from the angular box
     // it start run at initialization of component
     TechnologiesComponent.prototype.ngOnInit = function () {
-        //this.mainService.getData().subscribe(data => this.technologies = data[3].dataPage.technologies);
+        var _this = this;
+        this.technologiesService.getTechnologies().subscribe(function (data) { return _this.technologies = data; });
     };
     return TechnologiesComponent;
 }());
@@ -1122,7 +1398,7 @@ TechnologiesComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         template: __webpack_require__("../../../../../src/app/technologies/technologies.component.html")
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__shared_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_main_service__["a" /* MainService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__technologies_service__["a" /* TechnologiesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__technologies_service__["a" /* TechnologiesService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], TechnologiesComponent);
 
 var _a, _b;
@@ -1138,6 +1414,7 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__technologies_component__ = __webpack_require__("../../../../../src/app/technologies/technologies.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__technologies_service__ = __webpack_require__("../../../../../src/app/technologies/technologies.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1148,6 +1425,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 //import { MainService } from '../../shared/main.service';
 //import { AppComponent } from '../../app.component';
+
 
 var TechnologiesModule = (function () {
     function TechnologiesModule() {
@@ -1160,6 +1438,7 @@ TechnologiesModule = __decorate([
         declarations: [
             __WEBPACK_IMPORTED_MODULE_2__technologies_component__["a" /* TechnologiesComponent */]
         ],
+        providers: [__WEBPACK_IMPORTED_MODULE_3__technologies_service__["a" /* TechnologiesService */]]
     })
 ], TechnologiesModule);
 
@@ -1167,10 +1446,63 @@ TechnologiesModule = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/technologies/technologies.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TechnologiesService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_main_service__ = __webpack_require__("../../../../../src/app/shared/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_mainData__ = __webpack_require__("../../../../../src/app/shared/mainData.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+// for adding other services 
+var TechnologiesService = (function () {
+    function TechnologiesService(http, mainService, mainData) {
+        this.http = http;
+        this.mainService = mainService;
+        this.mainData = mainData;
+    }
+    TechnologiesService.prototype.getTechnologies = function () {
+        return this.mainService.anyRequest({
+            request: this.http.get(this.mainData.api().technologies.get).map(function (response) { return response.json().technologies; }),
+            cacheProp: 'technologies'
+        });
+    };
+    TechnologiesService.prototype.clearCache = function () {
+        this.technologies = null;
+    };
+    return TechnologiesService;
+}());
+TechnologiesService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__shared_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_main_service__["a" /* MainService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__shared_mainData__["a" /* MainData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_mainData__["a" /* MainData */]) === "function" && _c || Object])
+], TechnologiesService);
+
+var _a, _b, _c;
+//# sourceMappingURL=technologies.service.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/vacancies/vacancies.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<h2>{{titleVacancies}}</h2>\n\n<!-- <ol>\n  <li *ngFor=\"let vacancy of vacancies\">\n    <p>{{vacancy.title}}</p>\n    <p>{{vacancy.description}}</p>\n    <p>{{vacancy.detail}}</p>\n  </li>\n</ol> -->"
+module.exports = "\n<h2>{{titleVacancies}}</h2>\n\n<div class=\"row\">\n\n  <div class=\"col-sm-4 p-2\" *ngFor=\"let vacancy of vacancies\">\n    <div class=\"card\">\n      <div class=\"card-block\">\n        <p class=\"card-text\">{{vacancy.title}}</p>\n        <p class=\"card-text\">{{vacancy.description}}</p>\n        <p class=\"card-text\">{{vacancy.detail}}</p>\n        <button type=\"button\" class=\"btn btn-outline-primary\">edit</button>\n        <button type=\"button\" class=\"btn btn-outline-danger\">delete</button>\n      </div>\n    </div>\n  </div>\n\n</div>"
 
 /***/ }),
 
@@ -1181,7 +1513,7 @@ module.exports = "\n<h2>{{titleVacancies}}</h2>\n\n<!-- <ol>\n  <li *ngFor=\"let
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VacanciesComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_main_service__ = __webpack_require__("../../../../../src/app/shared/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vacancies_service__ = __webpack_require__("../../../../../src/app/vacancies/vacancies.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1195,17 +1527,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var VacanciesComponent = (function () {
-    function VacanciesComponent(mainService, router) {
-        this.mainService = mainService;
+    function VacanciesComponent(vacanciesService, router) {
+        this.vacanciesService = vacanciesService;
         this.router = router;
         this.titleVacancies = 'vacancies';
-        this.vacancies = [];
     }
-    // // this method from the angular box
-    // // it start run at initialization of component
+    // this method from the angular box
+    // it start run at initialization of component
     VacanciesComponent.prototype.ngOnInit = function () {
-        //this.mainService.getData().subscribe(data => this.vacancies = data[4].dataPage.vacancies);
-        //this.router.navigateByUrl('/vacancies');
+        var _this = this;
+        this.vacanciesService.getVacancies().subscribe(function (data) { return _this.vacancies = data; });
     };
     return VacanciesComponent;
 }());
@@ -1213,7 +1544,7 @@ VacanciesComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         template: __webpack_require__("../../../../../src/app/vacancies/vacancies.component.html")
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__shared_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_main_service__["a" /* MainService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__vacancies_service__["a" /* VacanciesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__vacancies_service__["a" /* VacanciesService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], VacanciesComponent);
 
 var _a, _b;
@@ -1228,7 +1559,8 @@ var _a, _b;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VacanciesModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vacancies_component__ = __webpack_require__("../../../../../src/app/vacancies/vacancies.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vacancies_service__ = __webpack_require__("../../../../../src/app/vacancies/vacancies.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__vacancies_component__ = __webpack_require__("../../../../../src/app/vacancies/vacancies.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1237,7 +1569,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 
 
-//import { MainService } from '../../shared/main.service';
+
 //import { AppComponent } from '../../app.component';
 
 var VacanciesModule = (function () {
@@ -1249,12 +1581,66 @@ VacanciesModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
         imports: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */]],
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__vacancies_component__["a" /* VacanciesComponent */]
+            __WEBPACK_IMPORTED_MODULE_3__vacancies_component__["a" /* VacanciesComponent */]
         ],
+        providers: [__WEBPACK_IMPORTED_MODULE_2__vacancies_service__["a" /* VacanciesService */]]
     })
 ], VacanciesModule);
 
 //# sourceMappingURL=vacancies.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/vacancies/vacancies.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VacanciesService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_main_service__ = __webpack_require__("../../../../../src/app/shared/main.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_mainData__ = __webpack_require__("../../../../../src/app/shared/mainData.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+// for adding other services 
+var VacanciesService = (function () {
+    function VacanciesService(http, mainService, mainData) {
+        this.http = http;
+        this.mainService = mainService;
+        this.mainData = mainData;
+    }
+    VacanciesService.prototype.getVacancies = function () {
+        return this.mainService.anyRequest({
+            request: this.http.get(this.mainData.api().vacancies.get).map(function (response) { return response.json().vacancies; }),
+            cacheProp: 'technologies'
+        });
+    };
+    VacanciesService.prototype.clearCache = function () {
+        this.vacancies = null;
+    };
+    return VacanciesService;
+}());
+VacanciesService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__shared_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_main_service__["a" /* MainService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__shared_mainData__["a" /* MainData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_mainData__["a" /* MainData */]) === "function" && _c || Object])
+], VacanciesService);
+
+var _a, _b, _c;
+//# sourceMappingURL=vacancies.service.js.map
 
 /***/ }),
 

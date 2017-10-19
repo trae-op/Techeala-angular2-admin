@@ -23,9 +23,9 @@ module.exports = {
             let collection = new db.faq({
               faq: []
             });
-            collection.save().then(data => res.json([data][0].faq)).catch(err => next(err));
+            collection.save().then(data => res.json([data][0])).catch(err => next(err));
           } else {
-            res.json(doc[0].faq)
+            res.json(doc[0])
           }
 
         })

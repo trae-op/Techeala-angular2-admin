@@ -1,10 +1,18 @@
 
 <h2>{{titleVacancies}}</h2>
 
-<!-- <ol>
-  <li *ngFor="let vacancy of vacancies">
-    <p>{{vacancy.title}}</p>
-    <p>{{vacancy.description}}</p>
-    <p>{{vacancy.detail}}</p>
-  </li>
-</ol> -->
+<div class="row">
+
+  <div class="col-sm-4 p-2" *ngFor="let vacancy of vacancies">
+    <div class="card">
+      <div class="card-block">
+        <p class="card-text">{{vacancy.title}}</p>
+        <p class="card-text">{{vacancy.description}}</p>
+        <p class="card-text">{{vacancy.detail}}</p>
+        <button type="button" class="btn btn-outline-primary">edit</button>
+        <button type="button" class="btn btn-outline-danger">delete</button>
+      </div>
+    </div>
+  </div>
+
+</div>
