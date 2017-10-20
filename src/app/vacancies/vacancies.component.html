@@ -6,8 +6,10 @@
   <div class="col-sm-4 p-2" *ngFor="let vacancy of vacancies">
     <div class="card">
       <div class="card-block">
-        <p class="card-text">{{vacancy.title}}</p>
-        <p class="card-text">{{vacancy.description}}</p>
+        <h5 class="card-text">
+          {{vacancy.title}}<br>
+          <small><i>{{vacancy.description}}</i></small>
+        </h5>
         <p class="card-text">{{vacancy.detail}}</p>
         <button type="button" class="btn btn-outline-primary">edit</button>
         <button type="button" class="btn btn-outline-danger">delete</button>

@@ -4,13 +4,11 @@
 
 <!-- <ngbd-accordion-config [faqData]="faqData"></ngbd-accordion-config> -->
 
-<ul>
+<ol class="faq">
   <li *ngFor="let faq of faqData">
-    <p>
-      <strong>{{faq.question}}</strong><br>
-      <i class="ml-3">{{faq.answer}}</i>
-    </p>
-    <button type="button" class="btn btn-outline-primary">edit</button>
+    <div class="question">{{faq.question}}</div>
+    <div class="answer ml-4">{{faq.answer}}</div>
+    <button type="button" class="btn btn-outline-primary ml-4">edit</button>
     <button type="button" class="btn btn-outline-danger">delete</button>
   </li>
-</ul>
+</ol>

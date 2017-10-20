@@ -22,7 +22,7 @@ export class VacanciesService {
   getVacancies() {
     return this.mainService.anyRequest({
       request: this.http.get(this.mainData.api().vacancies.get).map((response: Response) => response.json().vacancies),
-      cacheProp: 'technologies'
+      cacheProp: 'vacancies'
     });
   }
 

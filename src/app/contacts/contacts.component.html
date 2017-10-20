@@ -1,44 +1,9 @@
 
 <h2>{{titleContacts}}</h2>
 
-
-<div class="list-group contacts">
-<!--   <li class="list-group-item" *ngFor="let contact of contacts">
-    <img class="icon" src="https://www.quackit.com/pix/samples/12s.jpg" alt="">
-    <a [href]="contact.link">{{contact.name}}</a>
-        <button type="button" class="btn btn-outline-primary">edit</button>
-        <button type="button" class="btn btn-outline-danger">delete</button>
-  </li> -->
-  <div *ngFor="let contact of contacts" class="list-group-item">
-    <img class="icon float-left" src="https://www.quackit.com/pix/samples/12s.jpg" alt="">
-    <div class="inline">
-      <h5 class="mb-1">{{contact.name}}</h5>
-      <button type="button" class="btn btn-outline-primary">edit</button>
-      <button type="button" class="btn btn-outline-danger">delete</button>
-    </div>
-
-  </div>
-</div>
-
-<!-- <p>{{skype}}</p>
-<p>{{email}}</p>
-<p>{{phone}}</p>
-<p>
-  <strong>Coordinates</strong><br>
-  <span>{{mapCoordinatesLat}}</span><br>
-  <span>{{mapCoordinatesLng}}</span>
-</p>
-
-
-  <form class="form" (ngSubmit)="onSubmit(); contactsForm.reset()" #contactsForm="ngForm">
-    <input type="text" placeholder="What need to do?" name="inputForm" [(ngModel)]="inputForm"  required />
-    <button type="submit" [disabled]="contactsForm.form.invalid">Add</button>    
-  </form>
-
-
 <ngui-map 
   zoom="5" 
-  center="37.775, -122.434"
+  [center]="mapCoordinates.lat + ', ' + mapCoordinates.lng"
   (mapReady$)="onMapReady($event)"
   (mapClick)="onMapClick($event)"
   (idle)="onIdle($event)"
@@ -48,4 +13,17 @@
     [position]="pos"
     (initialized$)="onMarkerInit($event)"
   ></marker>
-</ngui-map> -->
+</ngui-map> 
+
+<br>
+
+<div class="list-group contacts">
+  <div *ngFor="let contact of contacts" class="list-group-item">
+    <img class="icon float-left" src="https://www.quackit.com/pix/samples/12s.jpg" alt="">
+    <div class="inline">
+      <h5 class="mb-1">{{contact.name}}</h5>
+      <button type="button" class="btn btn-outline-primary">edit</button>
+      <button type="button" class="btn btn-outline-danger">delete</button>
+    </div>
+  </div>
+</div>

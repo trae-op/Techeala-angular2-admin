@@ -3,8 +3,9 @@
 
 <h3>Slides</h3>
 
-<div class="row">
+<button type="button" class="btn btn-outline-success" (click)="open(content)">Add Slide</button>
 
+<div class="row">
   <div class="col-sm-4 p-2" *ngFor="let slide of slidesData">
     <div class="card">
       <img class="card-img-top" src="https://www.quackit.com/pix/samples/12s.jpg" alt="Card image cap">
@@ -15,5 +16,21 @@
       </div>
     </div>
   </div>
-
 </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>One fine body - {{main}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<pre>{{closeResult}}</pre>

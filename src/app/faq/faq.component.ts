@@ -9,7 +9,8 @@ import { FaqService } from './faq.service';
 import { FaqData } from './faqData';
 
 @Component({
-  templateUrl: './faq.component.html'
+  templateUrl: './faq.component.html',
+  styleUrls: ['./faq.scss']
 })
 
 export class FaqComponent implements OnInit {

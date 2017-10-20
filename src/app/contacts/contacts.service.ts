@@ -18,11 +18,19 @@ export class ContactsService {
   constructor(private http: Http, private mainService: MainService, private mainData: MainData) {}
   
   public contacts: Observable<any[]>;
+  public mapCoordinates: Observable<any[]>;
 
   getContacts() {
     return this.mainService.anyRequest({
         request: this.http.get(this.mainData.api().contacts.get).map((response: Response) => response.json().contacts),
         cacheProp: 'contacts'
+      });
+  }
+
+  getMapCoordinates() {
+    return this.mainService.anyRequest({
+        request: this.http.get(this.mainData.api().contacts.get).map((response: Response) => response.json().mapCoordinates),
+        cacheProp: 'mapCoordinates'
       });
   }
 

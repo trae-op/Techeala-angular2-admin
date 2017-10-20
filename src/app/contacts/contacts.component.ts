@@ -15,37 +15,26 @@ import { ContactsData } from './contactsData';
 
 export class ContactsComponent implements OnInit {
   titleContacts: string = 'Contacts';
-  skype: string;
-  phone: string;
-  email: string;
-  mapCoordinates: Object;
-  mapCoordinatesLat: number;
-  mapCoordinatesLng: number;
+
+
+  mapCoordinates: any = {
+    lng: Number,
+    lat: Number
+  };
+
   positions: Object[] = [];
-  inputForm: string = '';
 
   contacts: ContactsData[];
 
   constructor(private contactsService: ContactsService, private router: Router) {}
 
-  // // this method from the angular box
-  // // it start run at initialization of component
+  // this method from the angular box
+  // it start run at initialization of component
   ngOnInit() {
-    // this.mainService.getData().subscribe(data => {
-    //   this.skype = data[5].dataPage.skype;
-    //   this.phone = data[5].dataPage.phone;
-    //   this.email = data[5].dataPage.email;
-    //   this.mapCoordinates = data[5].dataPage.mapCoordinates;
-    //   this.mapCoordinatesLat = data[5].dataPage.mapCoordinates.lat;
-    //   this.mapCoordinatesLng = data[5].dataPage.mapCoordinates.lng;
-    // });
     this.contactsService.getContacts().subscribe(data => this.contacts = data);
+    this.contactsService.getMapCoordinates().subscribe(data => this.mapCoordinates = data[0]);
   }
 
-
-  onSubmit() {
-    console.log('input form\n', this.inputForm);
-  }
 
   onMapReady(map: any) {
     console.log('map', map);
@@ -53,7 +42,7 @@ export class ContactsComponent implements OnInit {
   }
   onIdle(event: any) {
     console.log('map', event.target);
-    this.positions.push([37.775, -122.434]);
+    this.positions.push([this.mapCoordinates.lat, this.mapCoordinates.lng]);
   }
   onMarkerInit(marker: any) {
     console.log('marker', marker);
