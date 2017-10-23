@@ -5,9 +5,11 @@ import { Component, OnInit } from '@angular/core';
 
 import { HomeService } from './home.service';
 
-import { SlidesData } from './slidesData';
+import { MainService } from '../shared/main.service';
 
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { PopupFormService } from '../shared/popupForm/popupForm.service';
+
+import { SlidesData } from './slidesData';
 
 @Component({
   templateUrl: './home.component.html',
@@ -20,35 +22,32 @@ export class HomeComponent {
 
   slidesData: SlidesData[];
 
-  closeResult: string;
-  main: string;
+  //closeResult: string;
 
-  constructor(private homeService: HomeService, private modalService: NgbModal) {}
+  dataPopupForm: any[] = [
+    {
+      type: 'input'
+    },
+    {
+      type: 'textarea'
+    }
+  ];
 
-  // // this method from the angular box
-  // // it start run at initialization of component
+  constructor(
+    private homeService: HomeService, 
+    private mainService: MainService,
+    private popupFormService: PopupFormService
+  ) {}
+
+  // this method from the angular box
+  // it start run at initialization of component
   ngOnInit() {
     this.homeService.getSlides().subscribe(data => this.slidesData = data);
   }
 
 
   open(content) {
-    this.modalService.open(content)
-    .result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
+    this.popupFormService.openPopupForm(content);
   }
 
 }

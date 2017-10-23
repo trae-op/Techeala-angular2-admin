@@ -18,7 +18,12 @@ import { MainData } from '../shared/mainData';
 
 export class MainService {
 
-  constructor(private http: Http, private mainData: MainData) {}
+  closeResult: string;
+
+  constructor(
+    private http: Http, 
+    private mainData: MainData
+  ) {}
   
   public menuData: Observable<any[]>;
 
@@ -45,6 +50,7 @@ export class MainService {
   clearCache() {
     this.menuData = null;
   }
+
 
   private handleError(error: Response): Observable<any> {
     // in a real world app, we may send the server to some remote logging infrastructure

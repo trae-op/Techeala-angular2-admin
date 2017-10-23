@@ -22,6 +22,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { ROUTES } from './app.routing';
 
 import { MainService } from './shared/main.service';
+import { PopupFormService } from './shared/popupForm/popupForm.service';
 
 import { MainData } from './shared/mainData';
 
@@ -47,7 +48,7 @@ import { MainData } from './shared/mainData';
     NavComponent,
     PageNotFoundComponent
   ],
-  providers: [MainService, MainData],
+  providers: [MainService, MainData, PopupFormService],
   bootstrap: [AppComponent]
 })
 
