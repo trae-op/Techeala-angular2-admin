@@ -5,6 +5,12 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+
+//import { ModalModule } from 'ngx-modialog';
+//import { BootstrapModalModule, bootstrap4Mode } from 'ngx-modialog/plugins/bootstrap';
+
+//import { Ng2PopupModule } from 'ng2-popup';
+
 // Feature Modules
 import { HomeModule } from './home/home.module';
 import { AboutModule } from './about/about.module';
@@ -22,10 +28,11 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { ROUTES } from './app.routing';
 
 import { MainService } from './shared/main.service';
-import { PopupFormService } from './shared/popupForm/popupForm.service';
+import { PopupFormService } from './shared/popupForm.service';
 
 import { MainData } from './shared/mainData';
 
+//bootstrap4Mode();
 
 @NgModule({
   imports: [
@@ -40,6 +47,9 @@ import { MainData } from './shared/mainData';
     VacanciesModule,
     PortfolioModule,
     TechnologiesModule,
+    //ModalModule.forRoot(),
+    //BootstrapModalModule,
+    //Ng2PopupModule
     // BrowserAnimationsModule,
     // MatButtonModule, MatCheckboxModule,
   ],

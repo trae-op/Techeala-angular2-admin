@@ -1,13 +1,13 @@
 
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 //import { Router } from '@angular/router';
 
 import { HomeService } from './home.service';
 
 import { MainService } from '../shared/main.service';
 
-import { PopupFormService } from '../shared/popupForm/popupForm.service';
+import { PopupFormService } from '../shared/popupForm.service';
 
 import { SlidesData } from './slidesData';
 
@@ -34,10 +34,13 @@ export class HomeComponent {
   ];
 
   constructor(
+    private elementRef: ElementRef,
     private homeService: HomeService, 
     private mainService: MainService,
     private popupFormService: PopupFormService
-  ) {}
+  ) {
+    console.log('elem--->', elementRef)
+  }
 
   // this method from the angular box
   // it start run at initialization of component
@@ -45,9 +48,8 @@ export class HomeComponent {
     this.homeService.getSlides().subscribe(data => this.slidesData = data);
   }
 
-
-  open(content) {
-    this.popupFormService.openPopupForm(content);
+  editSlide() {
+    this.popupFormService.openPopupForm();
   }
 
 }

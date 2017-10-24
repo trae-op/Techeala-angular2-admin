@@ -101,7 +101,7 @@ AboutComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/about/about.component.html"),
         styles: [__webpack_require__("../../../../../src/app/about/about.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__about_service__["a" /* AboutService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__about_service__["a" /* AboutService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ng_bootstrap_ng_bootstrap__["c" /* NgbModal */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ng_bootstrap_ng_bootstrap__["c" /* NgbModal */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__about_service__["a" /* AboutService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__about_service__["a" /* AboutService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ng_bootstrap_ng_bootstrap__["b" /* NgbModal */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ng_bootstrap_ng_bootstrap__["b" /* NgbModal */]) === "function" && _c || Object])
 ], AboutComponent);
 
 var _a, _b, _c;
@@ -310,7 +310,7 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__page_not_found_component__ = __webpack_require__("../../../../../src/app/page-not-found.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__shared_main_service__ = __webpack_require__("../../../../../src/app/shared/main.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__shared_popupForm_popupForm_service__ = __webpack_require__("../../../../../src/app/shared/popupForm/popupForm.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__shared_popupForm_service__ = __webpack_require__("../../../../../src/app/shared/popupForm.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__shared_mainData__ = __webpack_require__("../../../../../src/app/shared/mainData.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -323,6 +323,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+//import { ModalModule } from 'ngx-modialog';
+//import { BootstrapModalModule, bootstrap4Mode } from 'ngx-modialog/plugins/bootstrap';
+//import { Ng2PopupModule } from 'ng2-popup';
 // Feature Modules
 
 
@@ -339,6 +342,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+//bootstrap4Mode();
 var AppModule = (function () {
     function AppModule() {
     }
@@ -349,7 +353,7 @@ AppModule = __decorate([
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_4__ng_bootstrap_ng_bootstrap__["d" /* NgbModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_4__ng_bootstrap_ng_bootstrap__["c" /* NgbModule */].forRoot(),
             __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_15__app_routing__["a" /* ROUTES */]),
             __WEBPACK_IMPORTED_MODULE_5__home_home_module__["a" /* HomeModule */],
             __WEBPACK_IMPORTED_MODULE_6__about_about_module__["a" /* AboutModule */],
@@ -364,7 +368,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_13__mainNavigation_nav_component__["a" /* NavComponent */],
             __WEBPACK_IMPORTED_MODULE_14__page_not_found_component__["a" /* PageNotFoundComponent */]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_16__shared_main_service__["a" /* MainService */], __WEBPACK_IMPORTED_MODULE_18__shared_mainData__["a" /* MainData */], __WEBPACK_IMPORTED_MODULE_17__shared_popupForm_popupForm_service__["a" /* PopupFormService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_16__shared_main_service__["a" /* MainService */], __WEBPACK_IMPORTED_MODULE_18__shared_mainData__["a" /* MainData */], __WEBPACK_IMPORTED_MODULE_17__shared_popupForm_service__["a" /* PopupFormService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -779,7 +783,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<h2>{{titleHome}}</h2>\n\n<h3>Slides</h3>\n\n<button type=\"button\" class=\"btn btn-outline-success\" (click)=\"open()\">Add Slide</button>\n\n<div class=\"row\">\n  <div class=\"col-sm-4 p-2\" *ngFor=\"let slide of slidesData\">\n    <div class=\"card\">\n      <img class=\"card-img-top\" src=\"https://www.quackit.com/pix/samples/12s.jpg\" alt=\"Card image cap\">\n      <div class=\"card-block\">\n        <p class=\"card-text\">{{slide.name}}</p>\n        <button type=\"button\" class=\"btn btn-outline-primary\">edit</button>\n        <button type=\"button\" class=\"btn btn-outline-danger\">delete</button>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!-- \n<popup-form [content]=\"content\"></popup-form> -->\n\n<!--     <ng-template #content let-c=\"close\" let-d=\"dismiss\">\n      <div class=\"modal-header\">\n        <h4 class=\"modal-title\">Modal title</h4>\n        <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d('Cross click')\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n        <p>One fine body - {{main}}</p>\n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"c('Close click')\">Close</button>\n      </div>\n    </ng-template> -->"
+module.exports = "\n<h2>{{titleHome}}</h2>\n\n<h3>Slides</h3>\n\n<button type=\"button\" class=\"btn btn-outline-success\" (click)=\"editSlide()\">Add Slide</button>\n\n<div class=\"row\">\n  <div class=\"col-sm-4 p-2\" *ngFor=\"let slide of slidesData\">\n    <div class=\"card\">\n      <img class=\"card-img-top\" src=\"https://www.quackit.com/pix/samples/12s.jpg\" alt=\"Card image cap\">\n      <div class=\"card-block\">\n        <p class=\"card-text\">{{slide.name}}</p>\n        <button type=\"button\" class=\"btn btn-outline-primary\">edit</button>\n        <button type=\"button\" class=\"btn btn-outline-danger\">delete</button>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -809,7 +813,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_service__ = __webpack_require__("../../../../../src/app/home/home.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_main_service__ = __webpack_require__("../../../../../src/app/shared/main.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_popupForm_popupForm_service__ = __webpack_require__("../../../../../src/app/shared/popupForm/popupForm.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_popupForm_service__ = __webpack_require__("../../../../../src/app/shared/popupForm.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -825,7 +829,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HomeComponent = (function () {
-    function HomeComponent(homeService, mainService, popupFormService) {
+    function HomeComponent(elementRef, homeService, mainService, popupFormService) {
+        this.elementRef = elementRef;
         this.homeService = homeService;
         this.mainService = mainService;
         this.popupFormService = popupFormService;
@@ -839,12 +844,16 @@ var HomeComponent = (function () {
                 type: 'textarea'
             }
         ];
+        console.log('elem--->', elementRef);
     }
     // this method from the angular box
     // it start run at initialization of component
     HomeComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.homeService.getSlides().subscribe(function (data) { return _this.slidesData = data; });
+    };
+    HomeComponent.prototype.editSlide = function () {
+        this.popupFormService.openPopupForm();
     };
     return HomeComponent;
 }());
@@ -853,10 +862,10 @@ HomeComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/home/home.component.html"),
         styles: [__webpack_require__("../../../../../src/app/home/home.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__home_service__["a" /* HomeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__home_service__["a" /* HomeService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__shared_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_main_service__["a" /* MainService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__shared_popupForm_popupForm_service__["a" /* PopupFormService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_popupForm_popupForm_service__["a" /* PopupFormService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__home_service__["a" /* HomeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__home_service__["a" /* HomeService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__shared_main_service__["a" /* MainService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_main_service__["a" /* MainService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__shared_popupForm_service__["a" /* PopupFormService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_popupForm_service__["a" /* PopupFormService */]) === "function" && _d || Object])
 ], HomeComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=home.component.js.map
 
 /***/ }),
@@ -869,8 +878,7 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_popupForm_popupForm_component__ = __webpack_require__("../../../../../src/app/shared/popupForm/popupForm.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_service__ = __webpack_require__("../../../../../src/app/home/home.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_service__ = __webpack_require__("../../../../../src/app/home/home.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -880,7 +888,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
+//import { PopupFormComponent } from '../shared/popupForm/popupForm.component';
 
 var HomeModule = (function () {
     function HomeModule() {
@@ -892,9 +900,8 @@ HomeModule = __decorate([
         imports: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */]],
         declarations: [
             __WEBPACK_IMPORTED_MODULE_2__home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_3__shared_popupForm_popupForm_component__["a" /* NgbdModalComponent */]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_4__home_service__["a" /* HomeService */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_3__home_service__["a" /* HomeService */]]
     })
 ], HomeModule);
 
@@ -1324,107 +1331,12 @@ var MainData = (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/shared/popupForm/popupForm.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export NgbdModalContent */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbdModalComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
-/*
-import { Component, OnInit, Input } from '@angular/core';
-//import { Router } from '@angular/router';
-
-@Component({
-  //selector: 'popup-form',
-  template: `
-    <ng-template #content let-c="close" let-d="dismiss">
-      <div class="modal-header">
-        <h4 class="modal-title">Modal title</h4>
-        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>One fine body - {{main}}</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
-      </div>
-    </ng-template>
-  `
-})
-
-export class PopupFormComponent {
-
-  @Input() content: any[];
-
-  main: string = 'hello!!!';
-
-  constructor() {}
-
-}
-*/
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var NgbdModalContent = (function () {
-    function NgbdModalContent(activeModal) {
-        this.activeModal = activeModal;
-    }
-    return NgbdModalContent;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
-    __metadata("design:type", Object)
-], NgbdModalContent.prototype, "name", void 0);
-NgbdModalContent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'ngbd-modal-content',
-        template: "\n    <div class=\"modal-header\">\n      <h4 class=\"modal-title\">Hi there!</h4>\n      <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n        <span aria-hidden=\"true\">&times;</span>\n      </button>\n    </div>\n    <div class=\"modal-body\">\n      <p>Hello, {{name}}!</p>\n    </div>\n    <div class=\"modal-footer\">\n      <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Close</button>\n    </div>\n  "
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__["b" /* NgbActiveModal */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__["b" /* NgbActiveModal */]) === "function" && _a || Object])
-], NgbdModalContent);
-
-var NgbdModalComponent = (function () {
-    function NgbdModalComponent(modalService) {
-        this.modalService = modalService;
-    }
-    NgbdModalComponent.prototype.open = function () {
-        var modalRef = this.modalService.open(NgbdModalContent);
-        modalRef.componentInstance.name = 'World';
-    };
-    return NgbdModalComponent;
-}());
-NgbdModalComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'ngbd-modal-component',
-        template: __webpack_require__("../../../../../src/app/home/home.component.html")
-    }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__["c" /* NgbModal */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__["c" /* NgbModal */]) === "function" && _b || Object])
-], NgbdModalComponent);
-
-var _a, _b;
-//# sourceMappingURL=popupForm.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/shared/popupForm/popupForm.service.ts":
+/***/ "../../../../../src/app/shared/popupForm.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PopupFormService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1435,43 +1347,55 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-
-//import { MainData } from '../shared/mainData';
+//import { Modal } from 'ngx-modialog/plugins/bootstrap';
 // for adding other services 
 var PopupFormService = (function () {
-    function PopupFormService(modalService) {
-        this.modalService = modalService;
+    function PopupFormService() {
     }
-    // public menuData: Observable<any[]>;
-    PopupFormService.prototype.openPopupForm = function (content) {
-        var _this = this;
-        console.log('content--->>', content);
-        this.modalService.open(content)
-            .result.then(function (result) {
-            _this.closeResult = "Closed with: " + result;
-        }, function (reason) {
-            _this.closeResult = "Dismissed " + _this.getDismissReason(reason);
-        });
-    };
-    PopupFormService.prototype.getDismissReason = function (reason) {
-        if (reason === __WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__["a" /* ModalDismissReasons */].ESC) {
-            return 'by pressing ESC';
-        }
-        else if (reason === __WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__["a" /* ModalDismissReasons */].BACKDROP_CLICK) {
-            return 'by clicking on a backdrop';
-        }
-        else {
-            return "with: " + reason;
-        }
+    PopupFormService.prototype.openPopupForm = function () {
+        // this.modal.alert()
+        //   .size('lg')
+        //   .showClose(true)
+        //   .title('A simple Alert style modal window')
+        //   //.component(CustomPopupComponent)
+        //   // .body(`
+        //   //   <h4>Alert is a classic (title/body/footer) 1 button modal window that 
+        //   //   does not block.</h4>
+        //   //   <b>Configuration:</b>
+        //   //   <ul>
+        //   //     <li>Non blocking (click anywhere outside to dismiss)</li>
+        //   //     <li>Size large</li>
+        //   //     <li>Dismissed with default keyboard key (ESC)</li>
+        //   //     <li>Close wth button click</li>
+        //   //     <li>HTML content</li>
+        //   //   </ul>
+        //   // `)
+        //   .open()
+        //   .then( dialogRef => {
+        //     dialogRef.result.then( result => {
+        //       console.log(dialogRef, result)
+        //     });
+        //     //dialogRef
+        //   });
     };
     return PopupFormService;
 }());
 PopupFormService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__["c" /* NgbModal */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__["c" /* NgbModal */]) === "function" && _a || Object])
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])()
+    // @Component({
+    //   template: `
+    //     <p>This is custom popup</p>
+    //     {{number}} <button (click)="number = number+1">increase number</button><br/>
+    //     <button (click)="popup.close()">close</button>
+    //   `
+    // })
+    // class CustomPopupComponent {
+    //   number: number = 0;
+    // }
+    ,
+    __metadata("design:paramtypes", [])
 ], PopupFormService);
 
-var _a;
 //# sourceMappingURL=popupForm.service.js.map
 
 /***/ }),
